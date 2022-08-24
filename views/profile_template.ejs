@@ -1,0 +1,350 @@
+<%- include('partials/prologue.ejs', {title: `${profile.name} MBTI | Boo Personality Database`, description: `What is
+  ${profile.name}'s MBTI personality type? Find out what ${profile.name}'s Myers Briggs, Enneagram, and Zodiac sign are
+  in the Soulverse, the MBTI personality database of celebrities and fictional characters.`}) %>
+
+  <div class="row sqs-row">
+    <%- include('partials/categories.ejs') %>
+      <div class="col sqs-col-10 sqs-col-page">
+        <div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-2e6206ba777e9c6841a8">
+          <div class="sqs-block-content">
+            <h2 class="name">
+              <%= data.title %>
+                <%= profile.name %> <span style="color: #4edcd8; font-weight: bold">MBTI</span>
+            </h2>
+          </div>
+        </div>
+        <div class="row sqs-row">
+          <div class="col sqs-col-photo">
+            <div class="sqs-block image-block sqs-block-image" data-aspect-ratio="136.28691983122363"
+              data-block-type="5" id="block-1f47fbbe7cae8fdeba8c">
+              <div class="sqs-block-content">
+                <div
+                  class="image-block-outer-wrapper image-block-outer-wrapper-design layout-caption-below design-layout-inline combination-animation-site-default individual-animation-site-default individual-text-animation-site-default"
+                  data-test="image-block-inline-outer-wrapper">
+                  <noscript>
+                    <img class="picture" src="<%= profile.image %>" alt="<%= profile.image %>" />
+                  </noscript>
+                  <img class="thumb-image picture" data-src="<%= profile.image %>" data-image="<%= profile.image %>"
+                    data-image-dimensions="" data-image-focal-point="0.5,0.5" alt="<%= profile.image %>"
+                    data-load="false" data-image-id="60ba7def6ab3a1722eeb654b" data-type="image" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col sqs-col-trait">
+            <div class="trait-mob-row">
+              <div class="sub-trait-mob">
+                <div class="trait img-trait-mob">
+                  <img src="<%= profile.image %>" alt="<%= profile.image %>" />
+                </div>
+              </div>
+              <div class="sub-trait-mob">
+                <div class="trait">
+                  <p class="center" style="height: 25%; line-height: 1">MBTI</p>
+                  <p class="trait-font center" style="height: 40%">
+                    <%= profile.mbti %>
+                  </p>
+                </div>
+              </div>
+              <div class="sub-trait-mob">
+                <div class="trait">
+                  <p class="center" style="height: 25%; line-height: 1">Enneagram</p>
+                  <p class="trait-font center" style="height: 40%">
+                    <%= profile.enneagram %>
+                  </p>
+                </div>
+              </div>
+              <div class="sub-trait-mob">
+                <div class="trait">
+                  <p class="center" style="height: 25%; line-height: 1">Socionics</p>
+                  <p class="trait-font center" style="height: 40%">
+                    <%= profile.socionics %>
+                  </p>
+                </div>
+              </div>
+              <div class="sub-trait-mob">
+                <div class="trait">
+                  <p class="center" style="height: 25%; line-height: 1">Big 5 Sloan</p>
+                  <p class="trait-font center" style="height: 40%">
+                    <%= profile.sloan %>
+                  </p>
+                </div>
+              </div>
+              <div class="sub-trait-mob">
+                <div class="trait">
+                  <p class="center" style="height: 25%; line-height: 1">Instinctual Variant</p>
+                  <p class="trait-font center" style="height: 40%">
+                    <%= profile.variant %>
+                  </p>
+                </div>
+              </div>
+              <div class="sub-trait-mob">
+                <div class="trait">
+                  <p class="center" style="height: 25%; line-height: 1">Tritype</p>
+                  <p class="trait-font center" style="height: 40%">
+                    <%= profile.tritype %>
+                  </p>
+                </div>
+              </div>
+              <div class="sub-trait-mob">
+                <div class="trait">
+                  <p class="center" style="height: 25%; line-height: 1">Attitudinal Psyche</p>
+                  <p class="trait-font center" style="height: 40%">
+                    <%= profile.psyche %>
+                  </p>
+                </div>
+              </div>
+              <div class="sub-trait-mob">
+                <div class="trait">
+                  <p class="center" style="height: 25%; line-height: 1">Temperament</p>
+                  <div class="trait-font-special center" style="height: 40%">
+                    <%= profile.temperaments %>
+                  </div>
+                  <!-- <p class="trait-font-special"><%= profile.temperaments %></p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="sqs-block html-block sqs-block-html" data-block-type="2" id="block-8d8156722d8e328e16b8">
+          <div class="sqs-block-content">
+            <p class="" style="white-space:pre-wrap;">
+              <%= profile.description %>
+            </p>
+          </div>
+        </div>
+        <div class="sqs-block html-block sqs-block-html">
+          <div class="com-colam">
+            <div class="com-title">
+              <h3>Comments</h3>
+            </div>
+            <div class="com-voat-btn" id="voat-btn">
+              <button onclick="voteopencomment()">VOTE/COMMENT</button>
+            </div>
+          </div>
+          <div class="com-voat-contant" id="voat-contant">
+            <div class="com-voat-menu">
+              <div class="com-voat-menu-tab">
+                <button class="voat-menu-tablinks active"
+                  onclick="opentablink(event, 'com-voat-menu-tab-all')">All</button>
+                <button class="voat-menu-tablinks" onclick="opentablink(event, 'com-voat-menu-tab-mbti')">MBTI</button>
+                <button class="voat-menu-tablinks"
+                  onclick="opentablink(event, 'com-voat-menu-tab-enneagram')">Enneagram</button>
+                <button class="voat-menu-tablinks"
+                  onclick="opentablink(event, 'com-voat-menu-tab-zodiac')">Zodiac</button>
+              </div>
+
+              <div id="com-voat-menu-tab-all" class="com-voat-menu-tab-content active">
+                <div class="com-voat-sorting">
+                  <button class="active">best</button>
+                  <button>recent</button>
+                </div>
+                <div class="com-vot-box">
+                  <div class="com-vot-box-img-name">
+                    <div class="com-vot-box-img">
+                      <img src="<%= profile.image %>" alt="<%= profile.image %>" />
+                    </div>
+                    <div class="com-vot-box-name">
+                      <p>James</p>
+                    </div>
+
+                    <!-- <div class="placement">
+                      <div class="heart"></div>
+                    </div> -->
+                  </div>
+                  <form class="com-vot-box-form" id="form1">
+                    <h3 class="com-vot-box-form-title">
+                      <input type="text" placeholder="Title" id="txt" onkeyup="manage(this.value, 'title')" required />
+                    </h3>
+                    <div class="com-vot-box-form-dropdowns">
+                      <div class="com-vot-box-form-option-one">
+                        <select id="my-select" onchange="myselectone(this.value)" required>
+                          <option value="0">MBTI</option>
+                          <option value="1">INFP</option>
+                          <option value="2">INFJ</option>
+                          <option value="3">ENFP</option>
+                          <option value="4">ENFJ</option>
+                          <option value="5">INTJ</option>
+                          <option value="6">INTP</option>
+                          <option value="7">ENTP</option>
+                          <option value="8">ENTJ</option>
+                          <option value="9">ISFP</option>
+                          <option value="10">ISFJ</option>
+                          <option value="11">ESFP</option>
+                          <option value="12">ESFJ</option>
+                          <option value="13">ISTP</option>
+                          <option value="14">ISTJ</option>
+                          <option value="15">ESTP</option>
+                          <option value="16">ESTJ</option>
+                        </select>
+                        <!-- <div class="select animated zoomIn">
+                          <input type="radio" name="option">
+                          <i class="toggle icon icon-arrow-down"></i>
+                          <i class="toggle icon icon-arrow-up"></i>
+                          <span class="placeholder">Choose...</span>
+                          <label class="option">
+                            <input type="radio" name="option">
+                            <span class="title animated fadeIn"><i class="icon icon-speedometer"></i>Speedometer</span>
+                          </label>
+                          <label class="option">
+                            <input type="radio" name="option">
+                            <span class="title animated fadeIn"><i class="icon icon-fire"></i>Fire</span>
+                          </label>
+                          <label class="option">
+                            <input type="radio" name="option" disabled>
+                            <span class="title animated fadeIn"><i class="icon icon-handbag"></i>Handbag</span>
+                          </label>
+                          <label class="option">
+                            <input type="radio" name="option">
+                            <span class="title animated fadeIn"><i class="icon icon-badge"></i>Badge</span>
+                          </label>
+                        </div> -->
+                      </div>
+                      <div class="com-vot-box-form-option-two">
+                        <select id="my-select-two" onchange="myselecttwo(this.value)" required>
+                          <option value="0">Enneagram</option>
+                          <option value="1">1w2</option>
+                          <option value="2">2w3</option>
+                          <option value="3">3w2</option>
+                          <option value="4">3w4</option>
+                          <option value="5">4w3</option>
+                          <option value="6">4w5</option>
+                          <option value="7">5w4</option>
+                          <option value="8">5w6</option>
+                          <option value="9">6w5</option>
+                          <option value="10">6w7</option>
+                          <option value="11">7w6</option>
+                          <option value="12">7w8</option>
+                          <option value="13">8w7</option>
+                          <option value="14">8w9</option>
+                          <option value="15">9w8</option>
+                          <option value="16">9w1</option>
+                        </select>
+                      </div>
+                      <div class="com-vot-box-form-option-three">
+                        <select id="my-select-three" onchange="myselectthree(this.value)" required>
+                          <option value="0">Zodiac</option>
+                          <option value="1">Aries</option>
+                          <option value="2">Taurus</option>
+                          <option value="3">Gemini</option>
+                          <option value="4">Cancer</option>
+                          <option value="5">Leo</option>
+                          <option value="6">Virgo</option>
+                          <option value="7">Libra</option>
+                          <option value="8">Scorpio</option>
+                          <option value="9">Sagittarius</option>
+                          <option value="10">Capricorn</option>
+                          <option value="11">Aquarius</option>
+                          <option value="12">Pisces</option>
+                        </select>
+                      </div>
+                    </div>
+                    <p class="com-vot-box-form-paragraph">
+                      <textarea id="txt" onkeyup="manage(this.value, 'area')"
+                        placeholder="Share your typology reasoning by commenting here" required></textarea>
+                    </p>
+                    <button class="com-vot-box-form-submit-btn" id="btSubmit" disabled type="button"
+                      onclick="manage(this,'button')" value="Submit"><svg xmlns="http://www.w3.org/2000/svg" x="0px"
+                        y="0px" viewBox="0 0 52 52" enable-background="new 0 0 52 52" xml:space="preserve">
+                        <path d="M2.1,44.5l4.4-16.3h18.6c0.5,0,1-0.5,1-1v-2c0-0.5-0.5-1-1-1H6.5l-4.3-16l0,0C2.1,8,2,7.7,2,7.4
+                     C2,6.7,2.7,6,3.5,6.1c0.2,0,0.3,0.1,0.5,0.1l0,0l0,0l0,0l45,18.5c0.6,0.2,1,0.8,1,1.4s-0.4,1.1-0.9,1.3l0,0L4,46.4l0,0
+                     c-0.2,0.1-0.4,0.1-0.6,0.1C2.6,46.4,2,45.8,2,45C2,44.8,2,44.7,2.1,44.5L2.1,44.5z" />
+                      </svg>
+                    </button>
+                  </form>
+                </div>
+                <div class="com-vot-box">
+                  <div class="com-vot-box-img-name">
+                    <div class="com-vot-box-img">
+                      <img src="<%= profile.image %>" alt="<%= profile.image %>" />
+                    </div>
+                    <div class="com-vot-box-name">
+                      <p>James</p>
+                    </div>
+
+                    <!-- <div class="placement">
+                      <div class="heart"></div>
+                    </div> -->
+                  </div>
+                  <form class="com-vot-box-form">
+                    <h3 class="com-vot-box-form-title">
+                      He’s definitely an INTP
+                    </h3>
+                    <div class="com-vot-box-form-dropdowns">
+                      <div class="com-vot-box-form-option-one">
+                        <p value="0">MBTI</p>
+                      </div>
+                      <div class="com-vot-box-form-option-two">
+                        <p value="1">1w2</p>
+                      </div>
+                      <div class="com-vot-box-form-option-three">
+                        <p value="0">Zodiac</p>
+                      </div>
+                    </div>
+                    <p class="com-vot-box-form-paragraph">
+                      "He thinks about future, Ni. He is productive too, Te. That makes him INTJ ^_^"
+                      lmao ok guys sure.
+                      Let me make it easy for you guys:
+                      The Arguments - Ti vs Te & Ne vs Ni.
+                      1 - Ti vs Te:
+                      • Ti: Elon wants to create new things that don't exists, no one imagines. He tends to assume
+                      that
+                      the information he has is true to come to the conclusion.
+                      • Te: Te is mostly based on facts & evidence i.e the things which have been working for so long,
+                      on the ways everyone can trust/rely on.
+                      Elon Musk is an obvious Ti user.
+                      2 - Ne vs Ni:
+                      • Ne: His ideas are divergent; He does not stick to one idea, he is constantly thinking about
+                      other possible outcomes.
+                      • Ni: The individual who uses Ni has a clear vision about his idea & decides to follow it right
+                      away.
+                      ~ Also, some other arguments I have:
+                      - INTJs are serious people, INTPs are more flexible i.e Elon Musk is an "easy come, easy go"
+                      type
+                      of person, His Fe is so obvious, he does not takes jokes or anything personally.
+                      - Elon Musk is just a productive INTP who gets things done, that's why people think of him as an
+                      INTJ.
+                    </p>
+                  </form>
+                  <div id="wrapper">
+                    <div class="like-button">
+                      <div id="heart" onclick="likebutton()">
+                        <div id="left" class="segments"></div>
+                        <div id="right" class="segments"></div>
+                      </div>
+                      <div id="like-count">0</div>
+                    </div>
+                    <!-- <div id="likes">
+                      <span id="heart" class=" "><svg id="heart-icon" xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                      </span>
+                      <span id="counter">100</span>
+                    </div> -->
+                  </div>
+                </div>
+              </div>
+
+              <div id="com-voat-menu-tab-mbti" class="com-voat-menu-tab-content">
+                <p>mbti</p>
+              </div>
+
+              <div id="com-voat-menu-tab-enneagram" class="com-voat-menu-tab-content">
+                <p>enneagram</p>
+
+              </div>
+
+              <div id="com-voat-menu-tab-zodiac" class="com-voat-menu-tab-content">
+                <p>zodiac</p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+  </div>
+
+  <%- include('partials/epilogue.ejs') %>
